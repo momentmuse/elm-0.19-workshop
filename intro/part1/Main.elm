@@ -7,7 +7,7 @@ import Html.Attributes exposing (..)
 banner =
     div [ class "banner" ]
         [ div [ class "container" ]
-            [ h1  [class "logo-font" ] [ text "conduit" ] 
+            [ h1  [ class "logo-font" ] [ text "conduit" ] 
             , p [] [ text "A place to share your knowledge."] ]
         ]
 
