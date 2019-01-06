@@ -98,7 +98,10 @@ authentication token to JavaScript.
 -}
 sendSessionToJavaScript : Maybe String -> Cmd msg
 sendSessionToJavaScript maybeAuthenticationToken =
-    Cmd.none
+    storeSession maybeAuthenticationToken
+
+
+port storeSession : Maybe String -> Cmd msg
 
 
 
@@ -124,7 +127,10 @@ authentication token from JavaScript.
 -}
 receiveSessionFromJavaScript : (Value -> msg) -> Sub msg
 receiveSessionFromJavaScript toMsg =
-    Sub.none
+    onSessionChange toMsg
+
+
+port onSessionChange : (Value -> msg) -> Sub msg
 
 
 decode : Nav.Key -> Value -> Session
